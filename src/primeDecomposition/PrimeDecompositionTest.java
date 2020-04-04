@@ -13,4 +13,8 @@ public class PrimeDecompositionTest {
 		assertEquals("2*1", test.primeFactors(2));
 	}
 
+	@Test
+	public void primeFactors_4_returnCorrectPrimeFactors() {
+		assertEquals("2*2", test.primeFactors(4));
+	}
 }
