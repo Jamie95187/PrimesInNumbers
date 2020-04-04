@@ -1,0 +1,3 @@
+module primesInNumbers {
+	requires junit;
+}
