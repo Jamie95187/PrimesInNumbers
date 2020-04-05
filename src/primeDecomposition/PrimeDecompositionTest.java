@@ -10,31 +10,31 @@ public class PrimeDecompositionTest {
 	
 	@Test
 	public void primeFactors_2_returnCorrectPrimeFactors() {
-		assertEquals("2*1", test.primeFactors(2));
+		assertEquals("(2)", test.primeFactors(2));
 	}
 
 	@Test
 	public void primeFactors_4_returnCorrectPrimeFactors() {
-		assertEquals("2*2", test.primeFactors(4));
+		assertEquals("(2**2)", test.primeFactors(4));
 	}
 	
 	@Test
 	public void primeFactors_6_returnCorrectPrimeFactors() {
-		assertEquals("2*3", test.primeFactors(6));
+		assertEquals("(2)(3)", test.primeFactors(6));
 	}
 	
 	@Test
 	public void primeFactors_8_returnCorrectPrimeFactors() {
-		assertEquals("2*4", test.primeFactors(8));
+		assertEquals("(2**3)", test.primeFactors(8));
 	}
 	
 	@Test
 	public void primeFactors_9_returnCorrectPrimeFactors() {
-		assertEquals("3*2", test.primeFactors(9));
+		assertEquals("(3**2)", test.primeFactors(9));
 	}
 	
 	@Test
 	public void primeFactors_11_returnCorrectPrimeFactors() {
-		assertEquals("11*1", test.primeFactors(11));
+		assertEquals("(11)", test.primeFactors(11));
 	}
 }

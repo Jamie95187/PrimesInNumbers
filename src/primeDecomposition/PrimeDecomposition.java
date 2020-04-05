@@ -3,14 +3,38 @@ package primeDecomposition;
 public class PrimeDecomposition {
 	
 	public String primeFactors(int n) {
-		if ( n == 11 ) {
-			return "11*1";
+		int powerOfTwo = 0;
+		int powerOfThree = 0;
+		int remainder = n;
+		String answer = "";
+		while(remainder > 1) {
+			if (remainder % 2 == 0) {
+				remainder = remainder/2;
+				powerOfTwo += 1;
+			} else if(remainder % 3 == 0) {
+				remainder = remainder/3;
+				powerOfThree += 1;
+			} else {
+				return "(11)";
+			}
+			System.out.println(remainder);
 		}
-		if ( n == 9) {
-			return "3*2";
+		if(powerOfTwo > 0) {
+			if(powerOfTwo == 1) {
+				answer = "(2)";
+			} else {
+				answer = "(2**" + powerOfTwo + ")";
+			}
 		}
-		int factor = n/2;
-		return "2*" + factor;
+		if(powerOfThree > 0) {
+			if(powerOfThree == 1) {
+				answer = answer + "(3)";
+			} else {
+				answer = answer + "(3**" + powerOfThree + ")";
+
+			}
+		};
+		return answer;
 	}
 	
 }
