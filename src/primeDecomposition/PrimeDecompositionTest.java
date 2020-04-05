@@ -22,4 +22,9 @@ public class PrimeDecompositionTest {
 	public void primeFactors_6_returnCorrectPrimeFactors() {
 		assertEquals("2*3", test.primeFactors(6));
 	}
+	
+	@Test
+	public void primeFactors_8_returnCorrectPrimeFactors() {
+		assertEquals("2*4", test.primeFactors(8));
+	}
 }
