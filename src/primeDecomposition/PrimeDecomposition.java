@@ -1,40 +1,58 @@
 package primeDecomposition;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PrimeDecomposition {
 	
 	public String primeFactors(int n) {
-		int powerOfTwo = 0;
-		int powerOfThree = 0;
+		if (isPrime(n)) {
+			return "(" + n + ")";
+		}
 		int remainder = n;
+		HashMap<Integer, Integer> powers = new HashMap<Integer, Integer>();
+		for (int i = 2; i <= remainder; i++) {
+			if (isPrime(i)) {
+				isPrime(remainder);
+				while (remainder % i == 0 && !isPrime(remainder)) {
+					remainder = remainder/i;
+					if (powers.containsKey(i)) {
+						powers.put(i, powers.get(i)+1);
+					} else {
+						powers.put(i, 1);
+					}
+				}
+			}
+		}
+		
+		if(isPrime(remainder)) {
+			if (powers.containsKey(remainder)) {
+				powers.put(remainder, powers.get(remainder)+1);
+			} else {
+				powers.put(remainder, 1);
+			}
+		}
+		
 		String answer = "";
-		while(remainder > 1) {
-			if (remainder % 2 == 0) {
-				remainder = remainder/2;
-				powerOfTwo += 1;
-			} else if(remainder % 3 == 0) {
-				remainder = remainder/3;
-				powerOfThree += 1;
+		for (Map.Entry<Integer, Integer> factor : powers.entrySet()) {
+			if (factor.getValue() == 1) {
+				answer = answer + "(" + (int)factor.getKey() + ")";
 			} else {
-				return "(11)";
-			}
-			System.out.println(remainder);
-		}
-		if(powerOfTwo > 0) {
-			if(powerOfTwo == 1) {
-				answer = "(2)";
-			} else {
-				answer = "(2**" + powerOfTwo + ")";
+				answer = answer + "(" + (int)factor.getKey() + "**" + (int)factor.getValue() + ")";  
 			}
 		}
-		if(powerOfThree > 0) {
-			if(powerOfThree == 1) {
-				answer = answer + "(3)";
-			} else {
-				answer = answer + "(3**" + powerOfThree + ")";
-
-			}
-		};
 		return answer;
 	}
 	
+	public boolean isPrime(int n) {
+		if(n <= 1) {
+			return false;
+		}
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
