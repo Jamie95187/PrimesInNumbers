@@ -1,7 +1,7 @@
 package primeDecomposition;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PrimeDecomposition {
 	
@@ -10,7 +10,7 @@ public class PrimeDecomposition {
 			return "(" + n + ")";
 		}
 		int remainder = n;
-		HashMap<Integer, Integer> powers = new HashMap<Integer, Integer>();
+		TreeMap<Integer, Integer> powers = new TreeMap<Integer, Integer>();
 		for (int i = 2; i <= remainder; i++) {
 			if (isPrime(i)) {
 				isPrime(remainder);
