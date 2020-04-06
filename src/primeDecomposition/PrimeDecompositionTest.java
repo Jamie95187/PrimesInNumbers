@@ -37,4 +37,24 @@ public class PrimeDecompositionTest {
 	public void primeFactors_11_returnCorrectPrimeFactors() {
 		assertEquals("(11)", test.primeFactors(11));
 	}
+	
+	@Test
+	public void primeFactors_21_returnCorrectPrimeFactors() {
+		assertEquals("(3)(7)", test.primeFactors(21));
+	}
+	
+	@Test
+	public void primeFactors_31_returnCorrectPrimeFactors() {
+		assertEquals("(31)", test.primeFactors(31));
+	}
+	
+	@Test
+	public void primeFactors_1001_returnCorrectPrimeFactors() {
+		assertEquals("(7)(11)(13)", test.primeFactors(1001));
+	}
+	
+	@Test
+	public void primeFactors_86240_returnCorrectPrimeFactors() {
+		assertEquals("(2**5)(5)(7**2)(11)", test.primeFactors(86240));
+	}
 }
