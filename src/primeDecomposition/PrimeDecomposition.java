@@ -23,15 +23,11 @@ public class PrimeDecomposition {
 				}
 			}
 		}
-		
-		if(isPrime(remainder)) {
-			if (powers.containsKey(remainder)) {
-				powers.put(remainder, powers.get(remainder)+1);
-			} else {
-				powers.put(remainder, 1);
-			}
-		}
-		
+		if (powers.containsKey(remainder)) {
+			powers.put(remainder, powers.get(remainder)+1);
+		} else {
+			powers.put(remainder, 1);
+		}		
 		String answer = "";
 		for (Map.Entry<Integer, Integer> factor : powers.entrySet()) {
 			if (factor.getValue() == 1) {
