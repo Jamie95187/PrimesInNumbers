@@ -13,7 +13,6 @@ public class PrimeDecomposition {
 		TreeMap<Integer, Integer> powers = new TreeMap<Integer, Integer>();
 		for (int i = 2; i <= remainder; i++) {
 			if (isPrime(i)) {
-				isPrime(remainder);
 				while (remainder % i == 0 && !isPrime(remainder)) {
 					remainder = remainder/i;
 					if (powers.containsKey(i)) {
