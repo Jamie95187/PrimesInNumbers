@@ -11,7 +11,7 @@ public class PrimeDecomposition {
 		}
 		int remainder = n;
 		TreeMap<Integer, Integer> powers = new TreeMap<Integer, Integer>();
-		for (int i = 2; i <= remainder; i++) {
+		for (int i = 2; i <= Math.sqrt(remainder); i++) {
 			if (isPrime(i)) {
 				while (remainder % i == 0 && !isPrime(remainder)) {
 					remainder = remainder/i;
