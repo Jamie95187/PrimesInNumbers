@@ -57,4 +57,9 @@ public class PrimeDecompositionTest {
 	public void primeFactors_86240_returnCorrectPrimeFactors() {
 		assertEquals("(2**5)(5)(7**2)(11)", test.primeFactors(86240));
 	}
+	
+	@Test
+	public void primeFactors_100000_returnCorrectPrimeFactors() {
+		assertEquals("(2**5)(5**5)", test.primeFactors(100000));
+	}
 }
